@@ -44,14 +44,37 @@ function App() {
   };
 
   console.log("State", state);
+
+  const reloadData = () => {
+    setState({
+      ...state,
+      productList: mockData,
+      liked: [],
+      disliked: [],
+      cart: [],
+    });
+  };
   return (
     <>
       <div className="grid grid-rows-[auto_1fr_auto] h-screen">
-        <header className="bg-gray-900 text-orange-500 p-4">
+        <header className="bg-gray-900 text-orange-500 p-5">
           <p className="text-lg font-semibold">Swipe. Match. Shop.</p>
         </header>
-        <main className="p-4 min-h-[550px]">
-          {state.productList.length === 0 && <div>Product List Ends here</div>}
+        <main className="p-4 min-h-[550px] m-auto">
+          {state.productList.length === 0 && (
+            <div>
+              <p>Product List Ends here.</p>
+              <p>
+                <span
+                  className="underline p-0 m-0"
+                  onClick={() => reloadData()}
+                >
+                  Click here
+                </span>{" "}
+                to see the product list again.
+              </p>
+            </div>
+          )}
           {state.productList.map((item: any) => {
             return (
               <Card

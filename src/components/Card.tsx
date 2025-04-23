@@ -111,25 +111,31 @@ const Card: React.FC<CardProps> = ({
       >
         <div className="border border-gray-300 rounded-lg max-w-sm m-4 overflow-hidden h-[550px]">
           <div className="bg-white relative">
-            <img src={imageUrl} alt={title} className="w-[400px] h-[450px]" />
+            <img src={imageUrl} alt={title} className="w-[400px] h-[420px]" />
             {discountPercentage !== 0 && (
               <div className="absolute top-3 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-sm font-bold">
                 -{discountPercentage}%
               </div>
             )}
           </div>
-          <div className="py-3 px-auto bg-white h-40">
+          <div className="py-3 px-2 bg-white h-40">
             {brand && (
               <p className="text-sm uppercase text-gray-500 font-medium">
                 {brand}
               </p>
             )}
-            <h2 className="text-xl font-semibold mb-1">{title}</h2>
+            <h2 className="dark:text-white text-xl font-semibold mb-1">
+              {title}
+            </h2>
 
             <div className="flex items-center justify-center space-x-2">
-              {price && <span className="text-lg font-bold">₹{price}</span>}
+              {price && (
+                <span className="dark:text-gray-900 text-lg font-bold">
+                  ₹{price}
+                </span>
+              )}
               {originalPrice && price && discountPercentage !== 0 && (
-                <span className="text-gray-400 line-through text-sm">
+                <span className="dark:text-gray-900 text-gray-400 line-through text-sm">
                   ₹{originalPrice}
                 </span>
               )}
