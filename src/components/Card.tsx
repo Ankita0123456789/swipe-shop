@@ -110,7 +110,7 @@ const Card: React.FC<CardProps> = ({
         className="absolute top-10 inset-0 flex items-center justify-center"
       >
         <div className="border border-gray-300 rounded-lg max-w-sm m-4 overflow-hidden h-[550px]">
-          <div className="bg-white relative">
+          <div className="bg-white relative dark:bg-gray-800">
             <img src={imageUrl} alt={title} className="w-[400px] h-[420px]" />
             {discountPercentage !== 0 && (
               <div className="absolute top-3 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-sm font-bold">
@@ -118,7 +118,7 @@ const Card: React.FC<CardProps> = ({
               </div>
             )}
           </div>
-          <div className="py-3 px-2 bg-white h-40">
+          <div className="py-3 px-2 bg-white h-40 dark:bg-gray-800">
             {brand && (
               <p className="text-sm uppercase text-gray-500 font-medium">
                 {brand}
