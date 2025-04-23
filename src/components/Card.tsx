@@ -124,11 +124,15 @@ const Card: React.FC<CardProps> = ({
                 {brand}
               </p>
             )}
-            <h2 className="text-xl font-semibold mb-1">{title}</h2>
+            <h2 className="text-xl font-semibold mb-1 text-gray-800">
+              {title}
+            </h2>
 
             <div className="flex items-center justify-center space-x-2">
               {price && (
-                <span className="text-gray-800 text-lg font-bold">₹{price}</span>
+                <span className="text-gray-900 text-lg font-bold">
+                  ₹{price}
+                </span>
               )}
               {originalPrice && price && discountPercentage !== 0 && (
                 <span className="text-gray-400 line-through text-sm">
